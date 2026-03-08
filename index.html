@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthLens | Advanced AI Fake News Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph-fill ph-shield-check text-gradient"></i>
+            <span class="text-gradient font-bold">TruthLens</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="nav-link">
+            <i class="ph ph-github-logo"></i> View Source
+        </a>
+    </nav>
+
+    <main class="hero-section">
+        <header class="hero-text">
+            <div class="badge">Powered by NLP & Machine Learning</div>
+            <h1 class="main-title">Detect Fake News with <br><span class="text-gradient">Artificial Intelligence</span></h1>
+            <p class="subtitle">Paste any article, blog post, or news segment below. Our advanced model analyzes linguistic patterns to determine if it's credible or fabricated.</p>
+        </header>
+
+        <section class="glass-container detector-panel">
+            <textarea id="newsInput" placeholder="Paste your news article text here... (minimum 10 words)" spellcheck="false"></textarea>
+            
+            <div class="action-bar">
+                <button id="clearBtn" class="btn-secondary">
+                    <i class="ph ph-trash"></i> Clear
+                </button>
+                <button id="analyzeBtn" class="btn-primary">
+                    <i class="ph-bold ph-magnifying-glass"></i> Analyze Authenticity
+                </button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="hidden">
+                <div class="spinner"></div>
+                <p>Running NLP protocols...</p>
+            </div>
+
+            <!-- Result State -->
+            <div id="resultState" class="hidden result-box">
+                <div class="result-header">
+                    <div id="resultIcon" class="icon-container"></div>
+                    <div>
+                        <h2 id="resultLabel" class="result-title">Analyzing...</h2>
+                        <p class="result-subtitle">Confidence Score: <span id="confidenceScore" class="font-bold">--</span></p>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div id="confidenceBar" class="progress-bar"></div>
+                </div>
+                
+                <p id="resultMessage" class="result-description">Based on our model's data analysis...</p>
+            </div>
+        </section>
+
+        <!-- Feature highlights -->
+        <section class="features">
+            <div class="feature-card glass-container">
+                <i class="ph-fill ph-brain text-gradient"></i>
+                <h3>TF-IDF Vectorization</h3>
+                <p>Transforms text into meaningful statistical matrices.</p>
+            </div>
+            <div class="feature-card glass-container">
+                <i class="ph-fill ph-chart-line-up text-gradient"></i>
+                <h3>Logistic Regression</h3>
+                <p>Mathematically accurate binary classification (Real vs Fake).</p>
+            </div>
+            <div class="feature-card glass-container">
+                <i class="ph-fill ph-database text-gradient"></i>
+                <h3>ISOT Dataset</h3>
+                <p>Trained on 40,000+ verified true and fabricated articles.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed with Python, Flask, and Scikit-Learn.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
